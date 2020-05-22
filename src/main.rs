@@ -52,6 +52,22 @@ impl Interpreter {
         }
     } 
 
+    fn advance(&mut self) {
+        self.position += 1;
+
+        if self.position > self.text.len() -1 {
+            self.current_char = None;
+        } else {
+            self.current_char = Some(self.text.as_bytes()[self.position] as char);
+        }
+    }
+
+    fn is_whitespace(&mut self)  {
+        // while the current character isn't none and the current character isn't whitespace, keep moving forward
+        while self.current_char != None && self.current_char.unwrap().is_whitespace() {
+            self.advance();
+        }
+    }
     pub fn get_next_token (&mut self) -> Option<Token> {
         if self.position > self.text.len() - 1 {
             return Some(Token { token_type: EOF });
