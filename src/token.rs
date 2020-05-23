@@ -33,3 +33,14 @@ impl Position {
         }
     }
 }
+
+#[derive(PartialEq, Debug, Clone)]
+pub struct Token {
+    pub token_type: TokenType,
+}
+
+impl fmt::Display for Token {
+    fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+        write!(f, "(Token({:?})", self.token_type)
+    }
+}
