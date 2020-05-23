@@ -1,0 +1,5 @@
+Expr = Term ((PLUS|MINUS) Term)*
+
+Term = Factor ((MULTIPLY|DIVIDE) Factor)*
+
+Factor = (FLOAT|INT|VAR)
