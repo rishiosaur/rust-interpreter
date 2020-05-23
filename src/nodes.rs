@@ -1,3 +1,6 @@
+pub trait Factor {
+    pub fn new (token: Token) -> Self;
+}
 pub struct BinOpNode<T: Factor> {
     pub left_node: T,
     pub op_tok: Token,
