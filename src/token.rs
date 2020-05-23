@@ -1,11 +1,16 @@
 use std::fmt;
 
 #[derive(PartialEq, Debug, Clone)]
-pub enum TokenType {
+pub enum BinOps {
     Multiply,
     Divide,
     Add,
-    Subtract,
+    Subtract
+}
+
+#[derive(PartialEq, Debug, Clone)]
+pub enum TokenType {
+    BinOp(BinOps),
     LParen,
     RParen,
     RBracket,
