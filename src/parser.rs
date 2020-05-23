@@ -13,4 +13,10 @@ impl Parser {
         }
     }
 
+    pub fn advance(&mut self) {
+        self.index += 1;
+        if self.index < self.tokens.len()-1 {
+            // Get the current token
+        }
+    } 
 }
