@@ -18,4 +18,16 @@ impl Lexer {
         }
     }
 
+    fn advance(&mut self) {
+        if let Some(val) = self.current_char {
+            self.position.advance(val);
+        }
+
+        if self.position.index > (self.text.len()-1) {
+            println!("Out of bounds");
+            self.current_char = None;
+        } else {
+            self.current_char = Some(self.text.as_bytes()[self.position.index] as char);
+        }
+    }
  }
