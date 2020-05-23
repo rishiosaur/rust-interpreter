@@ -1,23 +1,19 @@
-use token::Token;
-
-pub trait Factor {
-    pub fn new (token: Token) -> Self;
-}
+use crate::token::Token;
 
 pub struct NumberNode {
     pub token: Token
 }
 
-impl Factor for NumberNode {
-    pub fn new(token: Token) -> Self {
+impl NumberNode {
+    fn new(token: Token) -> Self {
         Self { token: token }
     }
 }
 
-pub struct BinOpNode<T: Factor> {
-    pub left_node: T,
+pub struct BinOpNode {
+    pub left_node: NumberNode,
     pub op_tok: Token,
-    pub right_node: T
+    pub right_node: NumberNode
 }
 
 impl std::fmt::Display for BinOpNode {
