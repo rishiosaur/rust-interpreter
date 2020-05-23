@@ -2,6 +2,15 @@ use token::Token;
 pub trait Factor {
     pub fn new (token: Token) -> Self;
 }
+pub struct NumberNode {
+    pub token: Token
+}
+
+impl Factor for NumberNode {
+    pub fn new(token: Token) -> Self {
+        Self { token: token }
+    }
+}
 pub struct BinOpNode<T: Factor> {
     pub left_node: T,
     pub op_tok: Token,
