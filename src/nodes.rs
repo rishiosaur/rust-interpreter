@@ -1,3 +1,4 @@
+use token::Token;
 pub trait Factor {
     pub fn new (token: Token) -> Self;
 }
