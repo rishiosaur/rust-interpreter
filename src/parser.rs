@@ -19,4 +19,13 @@ impl Parser {
             // Get the current token
         }
     } 
+    pub fn expr() {
+
+    }
+    pub fn term() {
+
+    }
+    pub fn factor() {
+
+    }
 }
