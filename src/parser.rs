@@ -1,5 +1,6 @@
 use nodes::{BinOpNode, NumberNode};
 use token::Token;
+
 struct Parser {
     tokens: Vec<Token>,
     index: u32
@@ -19,12 +20,15 @@ impl Parser {
             // Get the current token
         }
     } 
+
     pub fn expr() {
 
     }
+
     pub fn term() {
 
     }
+
     pub fn factor() {
 
     }
